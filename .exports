@@ -1,5 +1,63 @@
 #!/usr/bin/env bash
 
+# General
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export PROGRAMMING_PROJECTS="$HOME/dev"
+
+# Server
+export PORT=3000
+export IP=localhost
+
+# Android
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+export PATH=$PATH:$ANDROID_HOME/build-tools/28.0.3
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_HVPROTO=ddm
+
+# Java
+# [[ -e /usr/libexec/java_home ]] && export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_202`
+export CLASSPATH="$PROGRAMMING_PROJECTS/java/lib/*"
+
+# Spotify
+export SPOTIFY_PORT=8080
+export SPOTIFY_REDIRECT_URI="http://localhost:${PORT}/spotify/callback"
+
+# Spotify Cover Search
+export SPOTIFY_COVER_PORT=3000
+export SPOTIFY_COVER_URI="http://localhost:${SPOTIFY_COVER_PORT}/spotify/callback"
+
+# Python
+export PATH="$PATH:$PROGRAMMING_PROJECTS/scripts/python"
+export PACKAGE_LIST_PATH="$PROGRAMMING_PROJECTS/package-tracker"
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+
+[[ -e "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
+
+# Node
+export NVM_DIR="$HOME/.nvm"
+[[ -e "/usr/local/opt/nvm/nvm.sh" ]] && . "/usr/local/opt/nvm/nvm.sh"
+
+# LS
+export LSCOLORS=ExfxcxdxBxegedabagacad
+
+# Lastcollage
+export LASTCOLLAGE_PUBLIC="$PROGRAMMING_PROJECTS/lastcollage"
+export LASTCOLLAGE_CACHE="$HOME/cache"
+
+# TeX
+export PATH=$PATH:/Library/TeX/Distributions/Programs/texbin
+
+# Homebrew
+export PATH="/usr/local/sbin:$PATH"
+
+#################################### defaults
+
 # Make vim the default editor.
 export EDITOR='vim';
 
@@ -18,10 +76,6 @@ export HISTSIZE='32768';
 export HISTFILESIZE="${HISTSIZE}";
 # Omit duplicates and commands that begin with a space from history.
 export HISTCONTROL='ignoreboth';
-
-# Prefer US English and use UTF-8.
-export LANG='en_US.UTF-8';
-export LC_ALL='en_US.UTF-8';
 
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";

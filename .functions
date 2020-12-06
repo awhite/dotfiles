@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-# Create a new directory and enter it
-function mkd() {
-	mkdir -p "$@" && cd "$_";
+mdcd () {
+	mkdir -p -- "$1" &&
+		cd -P -- "$1"
+}
+
+makealbum () {
+	ffmpeg -loop 1 -i "$1" -i "$2" -c:a copy -c:v libx264 -shortest ~/Desktop/out.mp4
 }
 
 # Change working directory to the top-most Finder window location
